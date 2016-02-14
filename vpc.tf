@@ -2,13 +2,13 @@
 # VPC
 #--------------------------------------------------------------
 resource "aws_vpc" "main" {
-    cidr_block = "172.31.0.0/16"
+    cidr_block = "10.100.0.0/16"
     enable_dns_hostnames = true
 }
 
 resource "aws_subnet" "main" {
     vpc_id = "${aws_vpc.main.id}"
-    cidr_block = "172.31.0.0/20"
+    cidr_block = "10.100.0.0/24"
     map_public_ip_on_launch = true
 }
 
