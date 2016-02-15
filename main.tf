@@ -10,6 +10,13 @@ module "vpc" {
   enable_dns_support = true
 }
 
+module "ami" {
+  source = "github.com/terraform-community-modules/tf_aws_coreos_ami"
+  region = "${var.vpc_region}"
+  channel = "stable"
+  virttype = "hvm"
+}
+
 resource "aws_network_acl" "main" {
     vpc_id = "${module.vpc.vpc_id}"
     tags {
