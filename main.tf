@@ -11,9 +11,9 @@ module "vpc" {
 }
 
 module "ami" {
-  source = "github.com/terraform-community-modules/tf_aws_coreos_ami"
+  source = "modules/aws/coreosami"
   region = "${var.vpc_region}"
-  channel = "stable"
+  channel = "${var.coreos_channel}"
   virttype = "hvm"
 }
 
