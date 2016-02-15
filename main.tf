@@ -11,7 +11,7 @@ module "vpc" {
 }
 
 module "ami" {
-  source = "modules/aws/coreosami"
+  source = "/modules/aws/coreosami"
   region = "${var.vpc_region}"
   channel = "${var.coreos_channel}"
   virttype = "hvm"
